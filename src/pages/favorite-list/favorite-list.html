@@ -12,10 +12,10 @@
         <ion-item-sliding *ngFor="let favorite of favorites">
             <button ion-item (click)="itemTapped(favorite)">
                 <ion-thumbnail item-left>
-                    <img src="{{favorite.show.image}}"/>
+                    <img src="{{favorite.shop.image}}"/>
                 </ion-thumbnail>
-                <h2>{{favorite.show.name}}</h2>
-                <p>{{favorite.show.date}} ∙ {{favorite.show.venue}}</p>
+                <h2>{{favorite.shop.name}}</h2>
+                <p>{{favorite.shop.shop-type}} ∙ {{favorite.shop.zw-type}}</p>
             </button>
             <ion-item-options>
                 <button danger (click)="deleteItem(favorite)">Delete</button>

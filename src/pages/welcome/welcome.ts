@@ -1,6 +1,6 @@
 import {Component, ViewChild} from '@angular/core';
 import { Slides, NavController } from 'ionic-angular';
-import {ShowListPage} from '../show-list/show-list';
+import {ShopListPage} from '../shop-list/shop-list';
 
 @Component({
     selector: 'page-welcome',

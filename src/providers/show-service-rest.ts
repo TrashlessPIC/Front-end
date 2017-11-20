@@ -3,10 +3,10 @@ import {Http, Headers, RequestOptions} from '@angular/http';
 import {SERVER_URL} from './config';
 import 'rxjs/Rx';
 
-let showsURL = SERVER_URL + 'api/shows/';
+let shopsURL = SERVER_URL + 'api/shops/';
 
 @Injectable()
-export class ShowService {
+export class ShopService {
   favoriteCounter: number = 0;
   favorites: Array<any> = [];
 
@@ -21,7 +21,7 @@ export class ShowService {
     }
 
     findById(id) {
-        return this.http.get(showsURL + "id/" + id)
+        return this.http.get(shopsURL + "id/" + id)
             .map(res => res.json())
             .toPromise();
     }
@@ -32,7 +32,7 @@ export class ShowService {
 
     favorite(show) {
         this.favoriteCounter = this.favoriteCounter + 1;
-        this.favorites.push({id: this.favoriteCounter, show: show});
+        this.favorites.push({id: this.favoriteCounter, shop: shop});
         return Promise.resolve();
     }
 
