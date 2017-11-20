@@ -1,17 +1,17 @@
 import {Component} from '@angular/core';
 import {Config, NavController} from 'ionic-angular';
-import {ShowService} from '../../providers/show-service-rest';
-import {ShowDetailPage} from '../show-detail/show-detail';
+import {ShopService} from '../../providers/shop-service-rest';
+import {ShopDetailPage} from '../shop-detail/shop-detail';
 import leaflet from 'leaflet';
 
 @Component({
-    selector: 'page-show-list',
-    templateUrl: 'show-list.html'
+    selector: 'page-shop-list',
+    templateUrl: 'shop-list.html'
 })
-export class ShowListPage {
+export class ShopListPage {
 
-    shows: Array<any>;
-    showsForSearch: Array<any>;
+    shops: Array<any>;
+    shopsForSearch: Array<any>;
     searchKey: string = "";
     viewMode: string = "list";
     map;
@@ -21,21 +21,21 @@ export class ShowListPage {
         this.findAll();
     }
 
-    openShowDetail(show: any) {
-        this.navCtrl.push(ShowDetailPage, show);
+    openShopDetail(show: any) {
+        this.navCtrl.push(ShopDetailPage, shop);
     }
 
     onInput(event) {
          // Reset items back to all of the items
-        this.shows = this.showsForSearch;
+        this.shops = this.shopsForSearch;
 
         // set val to the value of the searchbar
         let val = this.searchKey;
 
         // if the value is an empty string don't filter the items
         if (val && val.trim() != '') {
-          this.shows = this.shows.filter((show) => {
-            return (show.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
+          this.shops = this.shops.filter((shop) => {
+            return (shop.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
           })
         }
     }
@@ -47,31 +47,31 @@ export class ShowListPage {
     findAll() {
         this.service.findAll()
             .then(data => {
-                this.shows = data;
-                this.showsForSearch = data;
+                this.shops = data;
+                this.shopsForSearch = data;
             })
             .catch(error => alert(error));
     }
 
-    showMap() {
+    shopMap() {
         setTimeout(() => {
             this.map = leaflet.map("map").setView([48.85, 2.35], 10);
             leaflet.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
                 attribution: 'Tiles &copy; Esri'
             }).addTo(this.map);
-            this.showMarkers();
+            this.shopMarkers();
         })
     }
 
-    showMarkers() {
+    shopMarkers() {
         if (this.markersGroup) {
             this.map.removeLayer(this.markersGroup);
         }
         this.markersGroup = leaflet.layerGroup([]);
-        this.shows.forEach(show => {
-            if (show.lat, show.lng) {
-                let marker: any = leaflet.marker([show.lat, show.lng]).on('click', event => this.openShowDetail(event.target.data));
-                marker.data = show;
+        this.shops.forEach(shop => {
+            if (shop.lat, shop.lng) {
+                let marker: any = leaflet.marker([shop.lat, shop.lng]).on('click', event => this.openShopDetail(event.target.data));
+                marker.data = shop;
                 this.markersGroup.addLayer(marker);
             }
         });

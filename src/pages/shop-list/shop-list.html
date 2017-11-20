@@ -9,20 +9,20 @@
     </ion-navbar>
 </ion-header>
 
-<ion-content class="show-list">
+<ion-content class="shop-list">
 
     <ion-list *ngIf="viewMode==='list'">
 
-        <ion-item-sliding *ngFor="let show of shows">
-            <button ion-item (click)="openShowDetail(show)">
+        <ion-item-sliding *ngFor="let shop of showp">
+            <button ion-item (click)="openShowDetail(shop)">
                 <ion-thumbnail item-left>
-                    <img src="{{show.image}}"/>
+                    <img src="{{shop.image}}"/>
                 </ion-thumbnail>
-                <h2>{{show.name}}</h2>
-                <p>{{show.date}}</p>
+                <h2>{{shop.name}}</h2>
+                <p>{{shop.date}}</p>
             </button>
             <ion-item-options>
-                <button danger (click)="deleteItem(show)">Delete</button>
+                <button danger (click)="deleteItem(shop)">Delete</button>
             </ion-item-options>
         </ion-item-sliding>
 
@@ -37,7 +37,7 @@
         <ion-segment-button value="list">
             <ion-icon name="list"></ion-icon>
         </ion-segment-button>
-        <ion-segment-button value="map" (ionSelect)="showMap()">
+        <ion-segment-button value="map" (ionSelect)="shopMap()">
             <ion-icon name="map"></ion-icon>
         </ion-segment-button>
     </ion-segment>
