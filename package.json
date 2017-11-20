@@ -1,7 +1,7 @@
 {
-  "name": "showtonight",
+  "name": "Trashless",
   "version": "0.0.0",
-  "author": "Ghislain de Juvigny",
+  "author": "SZV",
   "private": true,
   "scripts": {
     "clean": "ionic-app-scripts clean",
@@ -49,5 +49,5 @@
       "locator": "ios"
     }
   ],
-  "description": "showtonight sample app"
+  "description": "Trashless app"
 }
