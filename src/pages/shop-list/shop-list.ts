@@ -17,11 +17,11 @@ export class ShopListPage {
     map;
     markersGroup;
 
-    constructor(public navCtrl: NavController, public service: ShowService, public config: Config) {
+    constructor(public navCtrl: NavController, public service: ShopService, public config: Config) {
         this.findAll();
     }
 
-    openShopDetail(show: any) {
+    openShopDetail(shop: any) {
         this.navCtrl.push(ShopDetailPage, shop);
     }
 

@@ -13,8 +13,8 @@
 
     <ion-list *ngIf="viewMode==='list'">
 
-        <ion-item-sliding *ngFor="let shop of showp">
-            <button ion-item (click)="openShowDetail(shop)">
+        <ion-item-sliding *ngFor="let shop of shop">
+            <button ion-item (click)="openShopDetail(shop)">
                 <ion-thumbnail item-left>
                     <img src="{{shop.image}}"/>
                 </ion-thumbnail>
