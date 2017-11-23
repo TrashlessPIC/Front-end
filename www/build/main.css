@@ -24319,7 +24319,7 @@ ion-navbar.toolbar {
 }
 
 .about-header {
-  background-color: #434954;
+  background-color: #FFFFFF;
   padding: 16px;
   width: 100%;
   min-height: 150px;
@@ -24330,7 +24330,7 @@ ion-navbar.toolbar {
   max-width: 200px;
   min-height: 115px;
   margin-left: -15px;
-  padding: 25px 0 20px 0;
+  padding: 25px 0 50px 0;
 }
 
 .about-info p {
