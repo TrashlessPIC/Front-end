@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {Config, NavController} from 'ionic-angular';
+import {Config, NavController, NavParams} from 'ionic-angular';
 import {ShopService} from '../../providers/shop-service-rest';
 import {ShopDetailPage} from '../shop-detail/shop-detail';
 import leaflet from 'leaflet';
@@ -16,8 +16,10 @@ export class ShopListPage {
     viewMode: string = "list";
     map;
     markersGroup;
+    selectedShoptype: any;
 
-    constructor(public navCtrl: NavController, public service: ShopService, public config: Config) {
+    constructor(public navCtrl: NavController, public navParams: NavParams, public service: ShopService, public config: Config) {
+        this.selectedShoptype = this.navParams.data; 
         this.findAll();
     }
 
@@ -47,7 +49,11 @@ export class ShopListPage {
     findAll() {
         this.service.findAll()
             .then(data => {
-                this.shops = data;
+                this.shops = data.filter((item) => {
+                    console.log("item a tester :", item);
+                    console.log("selectedShoptype ", this.selectedShoptype);
+                    return item.shoptype.indexOf(this.selectedShoptype) > -1;
+                });
                 this.shopsForSearch = data;
             })
             .catch(error => alert(error));
