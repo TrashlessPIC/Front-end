@@ -16,10 +16,11 @@
         <ion-item-sliding *ngFor="let shop of shops">
             <button ion-item (click)="openShopDetail(shop)">
                 <ion-thumbnail item-left>
-                    <img src="{{shop.image}}"/>
+                    <img src="{{shop.picture}}"/>
                 </ion-thumbnail>
                 <h2>{{shop.name}}</h2>
-                <p>{{shop.date}}</p>
+                <p id="shoptypebold">{{shop.shoptype}} ∙ {{shop.zwtype}}</p>
+                <p>{{shop.zwprecisetype}}</p>
             </button>
             <ion-item-options>
                 <button danger (click)="deleteItem(shop)">Delete</button>

@@ -6,27 +6,35 @@
 
 <ion-content>
     <ion-card *ngIf="shop.id">
-        <img src="{{shop.image}}"/>
+        <img src="{{shop.picture}}"/>
         <ion-card-content>
             <h2 class="card-title">{{shop.name}}</h2>
+            <p>{{shop.shoptype}} ∙ {{shop.zwtype}} ∙ {{shop.zwprecisetype}}</p>
             <p>{{shop.description}}</p>
+            <p><strong>Adresse :</strong> {{shop.address}}</p>
+            <p><strong>Téléphone :</strong> {{shop.phone}}</p>
+            <div class="aligndiv">
+                <a href="{{shop.website}}" target="_blank"><button ion-fab><ion-icon name="globe"></ion-icon></button></a>
+                <a link href={{shop.facebook}} target="_blank"><button ion-fab><ion-icon name="logo-facebook"></ion-icon></button></a>
+                <a link href=mailto:{{shop.mail}} target="_blank"><button ion-fab><ion-icon name="mail"></ion-icon></button></a>
+            </div>
         </ion-card-content>
         <ion-list>
             <ion-item>
                 <ion-icon item-left name="clock"></ion-icon>
                 <h3>Date</h3>
-                <ion-note item-right>{{shop.date}}</ion-note>
+                <ion-note item-right>{{shop.hours}}</ion-note>
             </ion-item>
         </ion-list>
 
         <ion-item>
             <button ion-button icon-left (click)="favorite(shop)" clear item-left>
                 <ion-icon name="star"></ion-icon>
-                Favorite
+                Ajouter aux favoris
             </button>
             <button ion-button icon-left (click)="share(shop)" clear item-right>
                 <ion-icon name="share"></ion-icon>
-                Share
+                Partager
             </button>
         </ion-item>
 

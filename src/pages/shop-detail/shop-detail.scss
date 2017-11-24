@@ -2,3 +2,51 @@ ion-note {
   color: color($colors, primary) !important;
   font-size: 1.4rem !important;
 }
+
+ion-card-content {
+	h2 {
+		margin-bottom: 0.5rem !important;
+		font-weight: 600 !important;
+		font-size: 16px !important;
+	}
+	p:nth-child(2) {
+		font-size: 12px !important;
+		color: #816f68 !important;
+		font-weight: 600;
+		margin-bottom: 2rem;
+	}
+
+	p:nth-child(3) {
+		font-style: italic !important;
+		margin-bottom: 1rem;
+	}
+
+	p:nth-child(4) {
+		margin-top: 1.5rem;
+	}
+
+	p:nth-child(5) {
+		margin-bottom: 1.5rem	;
+	}
+
+
+	button {
+		display: inline-block !important;
+		margin: 1.5rem 1.95rem !important;
+		height: 47.5px !important;
+		width: 47.5px !important;
+	}
+
+	a:nth-child(1) button {
+		background-color: #f2ce3e !important;
+	}
+
+	a:nth-child(2) button {
+		background-color: #3b5998 !important;
+	}
+
+	a:nth-child(3) button {
+		background-color: #ea4335 !important;
+	}
+}
+

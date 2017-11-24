@@ -7,10 +7,11 @@ page-welcome {
     position: relative;
 
     p {
-      background-color: grey;
+      background-color: #cecece;
       color: white;
       font-weight: 500;
       padding: 1.5rem;
+      box-shadow: 0 2px 3px #848484;
     }
 
     div:nth-child(1) p {

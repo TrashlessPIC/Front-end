@@ -3,7 +3,7 @@
         <button ion-button menuToggle>
             <ion-icon name="menu"></ion-icon>
         </button>
-        <ion-title>Favorites</ion-title>
+        <ion-title>Mes favoris</ion-title>
     </ion-navbar>
 </ion-header>
 
@@ -12,10 +12,10 @@
         <ion-item-sliding *ngFor="let favorite of favorites">
             <button ion-item (click)="itemTapped(favorite)">
                 <ion-thumbnail item-left>
-                    <img src="{{favorite.shop.image}}"/>
+                    <img src="{{favorite.shop.picture}}"/>
                 </ion-thumbnail>
                 <h2>{{favorite.shop.name}}</h2>
-                <p>{{favorite.shop.shop-type}} ∙ {{favorite.shop.zw-type}}</p>
+                <p>{{favorite.shop.shoptype}} ∙ {{favorite.shop.zwtype}}</p>
             </button>
             <ion-item-options>
                 <button danger (click)="deleteItem(favorite)">Delete</button>
