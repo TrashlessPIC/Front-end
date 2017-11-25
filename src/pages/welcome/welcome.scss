@@ -2,28 +2,63 @@ page-welcome {
 
   font-weight: 300;
 
+  .toolbar-background {
+    background-color: white;
+  }
+
+  .menu-logo {
+    height: 30px;
+    width: 45px;
+  }
+  
+  ion-navbar {
+    ion-icon {
+      color: black;
+    }
+  }
+
   ion-slide {
 
     position: relative;
 
     p {
-      background-color: #cecece;
+      background-color: #30a7cc;
       color: white;
-      font-weight: 500;
+      font-style: italic;
+      font-size: 15px;
+      font-weight: 400;
       padding: 1.5rem;
-      box-shadow: 0 2px 3px #848484;
+      box-shadow: 0 1px 2px #848484;
+      margin-bottom: 2rem;
+    }
+    
+    div:nth-child(2) p {
+      background-color: transparent;
+      margin-top: 1.5rem;
+      color: #8f8f8f;
+      font-weight: 500;
+      font-style: normal;
+      padding: 1rem;
+      box-shadow: 0 2px #848484;
+      width: 70%;
+      margin: 0 auto !important;
     }
 
-    div:nth-child(1) p {
-      margin-bottom: 3.5rem;
+    div:nth-child(3) p {
+      background-color: #e0e0e0;
+      color: #8f8f8f;
+      font-weight: 500;
+      font-style: normal;
+      padding: 1rem;
+      box-shadow: 0 1px 2px #848484;
     }
 
-    div:nth-child(1) button {
-      margin-bottom: 4rem;
+    div {
+      margin-bottom: 2rem;
     }
 
-    div:nth-child(2) {
-      margin-bottom: 5rem;
+    div button {
+      margin: 3rem 1rem !important;
     }
 
     img {

@@ -30,8 +30,8 @@ export class MyApp {
         this.initializeApp();
 
         this.appMenuItems = [
-            {title: 'Recherche', component: WelcomePage, icon: 'search'},
-            {title: 'Commerces', component: ShopListPage, icon: 'home'},
+            {title: 'Accueil', component: WelcomePage, icon: 'home'},
+            {title: 'Recherche', component: ShopListPage, icon: 'search'},
             {title: 'Mes favoris', component: FavoriteListPage, icon: 'star'},
             {title: 'A propos', component: AboutPage, icon: 'information-circle'},
         ];

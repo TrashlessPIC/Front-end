@@ -16,7 +16,7 @@ export class WelcomePage {
       this.slides.pager = true;
     }
 
-    openShopList(shoptype) {
-        this.navCtrl.push(ShopListPage, shoptype);
+    openShopList(shoptype, zwtype) {
+        this.navCtrl.push(ShopListPage, shoptype, zwtype);
     }
 }

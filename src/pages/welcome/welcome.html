@@ -3,7 +3,8 @@
         <button ion-button menuToggle>
             <ion-icon name="menu"></ion-icon>
         </button>
-        <ion-title>Choisissez...</ion-title>
+
+        <img src="assets/img/logo2.jpg" class="menu-logo"/>
     </ion-navbar>
 </ion-header>
 
@@ -11,26 +12,29 @@
     <ion-slides>
         <ion-slide style="background-image: url('assets/img/home_background.jpg');">
 
-            <div><p background-color:black >Un type de commerce</p>
+            <p> Soyez serein par rapport à vos engagements anti-déchets avec Trashless. <strong>Choisissez...</strong></p>
 
-            <button ion-button icon-only large (click)="openShopList('Magasin')">
-                <ion-icon name="magasin"><img src="assets/img/magasin.png" ></ion-icon>
-            </button>
-            <button ion-button icon-only large (click)="openShopList('Restaurant')">
-                <ion-icon name="magasin"><img src="assets/img/restaurant.png" ></ion-icon>
-            </button>
-            <button ion-button icon-only large (click)="openShopList()">
-                <ion-icon name="magasin"><img src="assets/img/bar.png" ></ion-icon>
-            </button></div>
+            <div>
+                <p background-color:black >Un type de commerce</p>
+                <div>
+                    <button ion-button icon-only large (click)="openShopList('Magasin')">
+                        <ion-icon name="magasin"><img src="assets/img/magasin.png" ></ion-icon>
+                    </button>
+                    <button ion-button icon-only large (click)="openShopList('Restaurant')">
+                        <ion-icon name="magasin"><img src="assets/img/restaurant.png" ></ion-icon>
+                    </button>
+                </div>
 
-            <div><p>Une action anti-déchets</p>
-
-            <button ion-button icon-only large (click)="openShopList()">
-                <ion-icon name="recyclage"><img src="assets/img/recyclage.png" ></ion-icon>
-            </button>
-            <button ion-button icon-only large (click)="openShopList()">
-                <ion-icon name="emballage"><img src="assets/img/emballage.png" ></ion-icon>
-            </button></div>
+                <p>Et une action anti-déchets</p>
+                <div>
+                    <button ion-button icon-only large (click)="openShopList('Recyclage')">
+                        <ion-icon name="recyclage"><img src="assets/img/recyclage.png" ></ion-icon>
+                    </button>
+                    <button ion-button icon-only large (click)="openShopList('Emballage')">
+                        <ion-icon name="emballage"><img src="assets/img/emballage.png" ></ion-icon>
+                    </button>
+                </div>
+            </div>
 
         </ion-slide>
 

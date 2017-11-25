@@ -1,6 +1,6 @@
 <ion-header>
     <ion-navbar>
-        <ion-title>Shop</ion-title>
+        <ion-title>{{shop.name}}</ion-title>
     </ion-navbar>
 </ion-header>
 
@@ -8,11 +8,10 @@
     <ion-card *ngIf="shop.id">
         <img src="{{shop.picture}}"/>
         <ion-card-content>
-            <h2 class="card-title">{{shop.name}}</h2>
             <p>{{shop.shoptype}} ∙ {{shop.zwtype}} ∙ {{shop.zwprecisetype}}</p>
             <p>{{shop.description}}</p>
-            <p><strong>Adresse :</strong> {{shop.address}}</p>
-            <p><strong>Téléphone :</strong> {{shop.phone}}</p>
+            <p><strong>Adresse : </strong><a href="https://www.google.fr/maps/search/{{shop.address}}">{{shop.address}}</a></p>
+            <p><strong>Téléphone : </strong><a href="tel:{{shop.phone}}">{{shop.phone}}</a></p>
             <div class="aligndiv">
                 <a href="{{shop.website}}" target="_blank"><button ion-fab><ion-icon name="globe"></ion-icon></button></a>
                 <a link href={{shop.facebook}} target="_blank"><button ion-fab><ion-icon name="logo-facebook"></ion-icon></button></a>

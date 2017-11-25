@@ -21,7 +21,7 @@ export class ShopDetailPage {
         this.ShopService.favorite(shop)
             .then(shop => {
                 let toast = this.toastCtrl.create({
-                    message: 'Shop added to your favorites',
+                    message: 'Le commerce a été ajouté à vos favoris',
                     cssClass: 'mytoast',
                     duration: 1000
                 });
@@ -31,24 +31,24 @@ export class ShopDetailPage {
 
     share(shop) {
         let actionSheet: ActionSheet = this.actionSheetCtrl.create({
-            title: 'Share via',
+            title: 'Partager via',
             buttons: [
                 {
                     text: 'Twitter',
-                    handler: () => console.log('share via twitter')
+                    handler: () => console.log('Partagé sur Twitter')
                 },
                 {
                     text: 'Facebook',
-                    handler: () => console.log('share via facebook')
+                    handler: () => console.log('Partagé sur Facebook')
                 },
                 {
                     text: 'Email',
-                    handler: () => console.log('share via email')
+                    handler: () => console.log('Partagé par email')
                 },
                 {
                     text: 'Cancel',
                     role: 'cancel',
-                    handler: () => console.log('cancel share')
+                    handler: () => console.log('Annuler')
                 }
             ]
         });
