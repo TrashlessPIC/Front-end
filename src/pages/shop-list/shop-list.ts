@@ -23,6 +23,7 @@ export class ShopListPage {
         this.selectedShoptype = this.navParams.data;
         this.selectedZwtype = this.navParams.data; 
         this.findAll();
+        this.findAllTwo();
     }
 
     openShopDetail(shop: any) {
@@ -46,23 +47,25 @@ export class ShopListPage {
 
     onCancel(event) {
         this.findAll();
+        this.findAllTwo();
     }
 
     findAll() {
         this.service.findAll()
             .then(data => {
                 this.shops = data.filter((shopitem) => {
-                    console.log("a tester :", shopitem);
                     console.log("selectedShoptype ", this.selectedShoptype);
                     return shopitem.shoptype.indexOf(this.selectedShoptype) > -1;
                 });
                 this.shopsForSearch = data;
             })
             .catch(error => alert(error));
-        this.service.findAll()
+    }
+
+    findAllTwo() {
+        this.service.findAllTwo()
             .then(data => {
                 this.shops = data.filter((zwitem) => {
-                    console.log("a tester :", zwitem);
                     console.log("selectedZwtype ", this.selectedZwtype);
                     return zwitem.zwtype.indexOf(this.selectedZwtype) > -1;
                 });
@@ -70,6 +73,7 @@ export class ShopListPage {
             })
             .catch(error => alert(error));
     }
+
 
     shopMap() {
         setTimeout(() => {

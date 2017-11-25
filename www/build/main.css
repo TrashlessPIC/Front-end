@@ -24362,6 +24362,14 @@ ion-list-header {
   margin-right: 10px;
 }
 
+p {
+  margin-bottom: 1rem;
+}
+
+.aboutimg {
+  margin: 3rem 8rem;
+}
+
 ion-note {
   color: #4cc450 !important;
   font-size: 1.4rem !important;
