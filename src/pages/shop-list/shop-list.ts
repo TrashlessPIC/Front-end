@@ -17,13 +17,10 @@ export class ShopListPage {
     map;
     markersGroup;
     selectedShoptype: any;
-    selectedZwtype: any;
 
     constructor(public navCtrl: NavController, public navParams: NavParams, public service: ShopService, public config: Config) {
         this.selectedShoptype = this.navParams.data;
-        this.selectedZwtype = this.navParams.data; 
         this.findAll();
-        this.findAllTwo();
     }
 
     openShopDetail(shop: any) {
@@ -47,27 +44,15 @@ export class ShopListPage {
 
     onCancel(event) {
         this.findAll();
-        this.findAllTwo();
     }
 
     findAll() {
         this.service.findAll()
             .then(data => {
-                this.shops = data.filter((shopitem) => {
+                this.shops = data.filter((item) => {
                     console.log("selectedShoptype ", this.selectedShoptype);
-                    return shopitem.shoptype.indexOf(this.selectedShoptype) > -1;
-                });
-                this.shopsForSearch = data;
-            })
-            .catch(error => alert(error));
-    }
+                    return item.shoptype.indexOf(this.selectedShoptype) > -1 || item.zwtype.indexOf(this.selectedShoptype) > -1;
 
-    findAllTwo() {
-        this.service.findAllTwo()
-            .then(data => {
-                this.shops = data.filter((zwitem) => {
-                    console.log("selectedZwtype ", this.selectedZwtype);
-                    return zwitem.zwtype.indexOf(this.selectedZwtype) > -1;
                 });
                 this.shopsForSearch = data;
             })

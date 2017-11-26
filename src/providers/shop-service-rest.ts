@@ -20,12 +20,6 @@ export class ShopService {
             .toPromise();
     }
 
-    findAllTwo() {
-        return this.http.get(shopsURL)
-            .map(res => res.json())
-            .toPromise();
-    }
-
     findById(id) {
         return this.http.get(shopsURL + "id/" + id)
             .map(res => res.json())
