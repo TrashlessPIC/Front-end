@@ -24370,6 +24370,22 @@ p {
   margin: 3rem 8rem;
 }
 
+.teampic {
+  margin: 2rem auto;
+  display: block;
+  width: 150px;
+  height: 150px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 grey;
+}
+
+.pictitle {
+  text-align: center !important;
+  font-weight: 600;
+  font-size: 18px;
+  color: #30a7cc !important;
+}
+
 ion-note {
   color: #4cc450 !important;
   font-size: 1.4rem !important;
